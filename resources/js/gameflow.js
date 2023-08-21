@@ -29,8 +29,28 @@ const userEvent = (function() {
     });
   }
 
+  function startGame() {
+    const startGameBtn = document.getElementById('start-game-btn');
+    const toggleStartGamePage = document.getElementById('start-game-wrapper');
+    const playerInput = document.getElementById('player-input');
+    const computerInput = document.getElementById('computer-input');
+    const playerName = document.getElementById('player-name');
+    const computerName = document.getElementById('computer-name');
+    
+    startGameBtn.addEventListener('click', () => {
+      if (playerInput.value.trim() !== '' && computerInput.value.trim() !== '') {
+        playerName.textContent = playerInput.value;
+        computerName.textContent = computerInput.value;
+        toggleStartGamePage.style.zIndex = -1;
+      } else {
+        alert('Please enter name for User and Computer!');
+      }
+    })
+  };
+
   return { 
-    gameLogic: gameLogic 
+    gameLogic: gameLogic,
+    startGame: startGame
   };
 })();
 

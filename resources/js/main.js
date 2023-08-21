@@ -39,5 +39,7 @@ Both approaches are valid and useful in different scenarios.*/
 import boardLayout from "./gameboard.js";
 import userEvent from "./gameflow.js";
 
-boardLayout.createBoard();
+boardLayout.createMainLayout();
 userEvent.gameLogic();
+userEvent.startGame();
+
